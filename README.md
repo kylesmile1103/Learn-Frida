@@ -114,6 +114,8 @@ While spawning, Frida will pause the app for early instrumentation purpose, so w
 
 **Note:**
 
+* Apk that built from latest version of Unity Engine (including the sample app in this tutorial) will crash the server if we don't use `-f`, so make sure to add that option in cmd line.
+
 * Early instrumentation will need an async await wrapper, because the module (libil2cpp.so) might not be able to load before the script's executing. See the code below:
 
 ```javascript
