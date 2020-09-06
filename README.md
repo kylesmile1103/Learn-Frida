@@ -100,14 +100,17 @@ Here're some features that we're gonna mainly focus on for modding Unity app:
   * attach(`address`, `callback`)
   * replace(`adress`, `callback`)
   
-3. NativePointer(`offset|decimal`)
-  * readInt() | readFloat() | readutf16String() | readByteArray(decimal) | readPointer()
-  * writeInt(decimal) | writeFloat(decimal) | writeUtf16String('some string') | writeByteArray(hex) | writePointer(ptr)
+3. NativePointer(`offset | decimal`)
+  * readInt() | readFloat() | readutf16String() | readByteArray(`decimal`) | readPointer()
+  * writeInt(`decimal`) | writeFloat(`decimal`) | writeUtf16String(`'some string'`) | writeByteArray(`hex`) | writePointer(`ptr`)
   
 4. NativeFunction(`address`, `return type`, `[array of argument]`)
 
 5. Memory
- * 
+  * scan(`base address`, `size`, `pattern`, `callback`)
+ 
+6. Process
+  * enumerateRanges(`protection | specifier`)
 
 ### Hook the script to desired app
 
