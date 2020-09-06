@@ -54,3 +54,30 @@ function makeToast(string) {
   });
 }
 ```
+
+- Find Static Field:
+
+```
+var addr;
+var scanAddr = function (val) {
+    addr = val;
+}
+
+var getStaticOffset = function (range, val) {
+    var pattern = ptr(val).toMatchPattern().replace("00 00 00 00", "");
+
+    Memory.scan(range.base, range.size, pattern, {
+        onMatch: function (address, size) {
+            //console.log('Memory.scan() found match at', address,'with size', size);
+            scanAddr(address);
+            // Optionally stop scanning early:
+            //return 'stop';
+        },
+        onComplete: function () {}
+    });
+    //addr = ptr(0x73d8c246d0);
+    var offset = addr.sub(range.base);
+    //console.log('offset=', offset);
+    return offset;
+}
+```
