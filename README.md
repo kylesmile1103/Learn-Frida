@@ -68,7 +68,7 @@ Let's install and start the server by following this [Frida document](https://fr
 
 The process of installing and updating Frida server could be done automatically by a Magisk module or an Android app published on Google Play.
 
-* With Magisk module, just open [Magisk](https://github.com/topjohnwu/Magisk/releases), go to Download and install the `MagiskFrida` module then restart the device. This method is highly recommended since MagiskFrida is continuously developing, the server itself is automatically started every time the device boots and also get updated whenever there's a new version released. 
+* With Magisk module, just open [Magisk](https://github.com/topjohnwu/Magisk/releases) app, go to Download tab, find and install the `MagiskFrida` module then restart the device. This method is highly recommended since MagiskFrida is continuously developing, the server itself is automatically started every time the device boots and also get updated whenever there's a new version released. 
 
 * With [Frida server](https://play.google.com/store/apps/details?id=me.shingle.fridaserver) app by `shingle`, find it on Google Play with packageID `me.shingle.fridaserver`. After `su` granted, we can now download and start the Frida-server easily.
 
@@ -83,5 +83,23 @@ This `-U` option means USB or remote device, so that we should see the processes
 ## Mod our first Unity app
 
 This tutorial comes with a sample Unity app that designed for learning Frida, so let's begin by downloading the [apk file](https://github.com/kylesmile1103/Learn-Frida/raw/master/gameLearn.apk).
+
+### Write the first script
+
+### Hook the script to desired app
+
+First, we need to make Frida listen to our app, then use `-l` to hook the custom Javascript file, take a look at this following cmd:
+
+> frida -U <packageID> -l <someScript.js>
+  
+To spawn the app then listen to it right away, which is very helpful for early instrument, use `-f`
+
+> frida -U -f <packageID> -l <someScript.js>
+  
+While spawning, Frida will pause the app for early instrument purpose, so we need `%resume` to resume the app. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
+
+> frida -Uf <packageID> -l <someScript.js> --no-pause
+  
+
 
 
