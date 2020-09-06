@@ -166,6 +166,7 @@ Here're some features that we're gonna mainly focus on for modding Unity app:
   * scan(`base address`, `size`, `pattern`, `callback`)
  
 6. **[Process](https://frida.re/docs/javascript-api/#process)**
+  * findRangeByAddress(`ptr`)
   * enumerateRanges(`protection | specifier`)
   
 View the sample script in this repo and follow the tutorial video for better understanding how to implement these method to our sample app.
