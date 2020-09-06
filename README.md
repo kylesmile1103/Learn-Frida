@@ -114,13 +114,13 @@ While spawning, Frida will pause the app for early instrumentation purpose, so w
 
 **Note:**
 
-* Early instrumentation will need an async await function, because the module (libil2cpp.so) might not be able to load before the script executing. See the code below:
+* Early instrumentation will need an async await function, because the module (libil2cpp.so) might not be able to load before the script's executing. See the code below:
 
 ```javascript
 function awaitForCondition(callback) {
     var i = setInterval(function () {
       var addr = Module.findBaseAddress('libil2cpp.so');
-        // console.log("Address found:", addr);
+        console.log("Address found:", addr);
         if (addr) {
             clearInterval(i);
             callback(+addr);
