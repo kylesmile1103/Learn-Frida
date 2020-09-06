@@ -52,6 +52,8 @@ We are doing it on Android, so we need to find and download `frida-server-xx.xx.
 
 #### Install the server manually via ADB
 
+Let's install and start the server by following this [Frida document](https://frida.re/docs/android/)
+
 > adb push frida-server /data/local/tmp/
 
 > adb shell
@@ -68,7 +70,7 @@ The process of installing and updating Frida server could be done automatically 
 
 * With Magisk module, just open [Magisk](https://github.com/topjohnwu/Magisk/releases), go to Download and install the `MagiskFrida` module then restart the device. This method is highly recommended since MagiskFrida is continuously developing, the server itself is automatically started every time the device boots and also get updated whenever there's a new version released. 
 
-* With [Frida server](https://play.google.com/store/apps/details?id=me.shingle.fridaserver) app by shingle, find it on Google Play with packageID `me.shingle.fridaserver`. After `su` granted, we can now download and start the Frida-server.
+* With [Frida server](https://play.google.com/store/apps/details?id=me.shingle.fridaserver) app by `shingle`, find it on Google Play with packageID `me.shingle.fridaserver`. After `su` granted, we can now download and start the Frida-server easily.
 
 #### Testing via cmd/terminal
 
