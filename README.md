@@ -84,13 +84,30 @@ This `-U` option means USB or remote device, so that we should see the processes
 
 This tutorial comes with a sample Unity app that designed for learning Frida, so let's begin by downloading the [apk file](https://github.com/kylesmile1103/Learn-Frida/raw/master/gameLearn.apk).
 
+### Hook the script to desired app
+
+First, we need to make Frida listen to our app, then use `-l` to hook the custom Javascript file, see the cmd below:
+
+> frida -U <com.someapp> -l <someScript.js>
+  
+To spawn the app then listen to it right away, which is very helpful for early instrument, use `-f`
+
+> frida -U -f <com.someapp> -l <someScript.js>
+  
+While spawning, Frida will pause the app for early instrument purpose, so we need `%resume` to resume it. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
+
+> frida -Uf <com.someapp> -l <someScript.js> --no-pause
+
+**Note:**
+The `-l <someScript.js>` is optional, Frida CLI is a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) interface so we just need to paste the whole script into cmd line to execute it, but that is not ideally for large amount of codes. 
+
 ### Write the first script
 
 Learning Frida script is not difficult since it supports Javascript API and others high-level programming language. Let's take a look at Javascript API [document](https://frida.re/docs/javascript-api/).
 
-Clone [this repo](https://github.com/oleavr/frida-agent-example) so we can get code completion, type checking, inline docs, refactoring tools, etc.
+Clone [this repo](https://github.com/oleavr/frida-agent-example) and create new `.js` file inside of project folder so we can get code completion, type checking, inline docs, refactoring tools, etc.
 
-Here're some features that we're gonna mainly focus on for modding Unity app:
+Here're some mainly features that we're gonna focus on for modding Unity app:
 
 1. Module
   * findBaseAdrress(`lib name`)
@@ -111,18 +128,6 @@ Here're some features that we're gonna mainly focus on for modding Unity app:
  
 6. Process
   * enumerateRanges(`protection | specifier`)
-
-### Hook the script to desired app
-
-First, we need to make Frida listen to our app, then use `-l` to hook the custom Javascript file, see the cmd below:
-
-> frida -U <com.someapp> -l <someScript.js>
   
-To spawn the app then listen to it right away, which is very helpful for early instrument, use `-f`
+View the sample script in this repo to understand how to implement these method to our sample app.
 
-> frida -U -f <com.someapp> -l <someScript.js>
-  
-While spawning, Frida will pause the app for early instrument purpose, so we need `%resume` to resume it. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
-
-> frida -Uf <com.someapp> -l <someScript.js> --no-pause
- 
