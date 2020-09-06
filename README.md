@@ -25,5 +25,14 @@ First, you would need to install Frida-tools on Windows/Mac/Linux in order to us
 
 ### Install with Pip
 
->pip install frida-tools
+> pip install frida-tools
 
+### Testing via cmd/terminal
+
+Open cmd/powershell or terminal and type:
+
+> frida-ps
+
+This will list all the running processes of your current OS.
+
+![frida in cmd](https://i.imgur.com/uO49dpN.png)
