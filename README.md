@@ -18,7 +18,7 @@ In other words, it allows you to inject your own code and to programmatically an
 
 As far as I know, Frida is a framework designed for _developers, reverse-engineers, and security researchers to monitor and debug running processes. It also enables programmers, software and security professionals to execute their own JS scripts into other processes._
 
-Game/App Modding might not meet the purpose how Frida is made for, but due to its wonderful features, such as live debugging; powerfull instrumentation kit; simple syntax, simple setup that help beginers easier to implement and learn, etc. It can be a perfect method for modding if we understand the Frida's fundamental, so let's start!
+Game/App Modding might not meet the purpose on how Frida is made for, but due to its wonderful features, such as live debugging; powerfull instrumentation kit; simple syntax, simple setup that help beginers easier to implement and learn, etc. It can be a perfect method for modding if we understand the Frida's fundamental, so let's start!
 
 ## Getting ready
 
