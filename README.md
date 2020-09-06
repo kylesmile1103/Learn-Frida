@@ -88,15 +88,15 @@ This tutorial comes with a sample Unity app that designed for learning Frida, so
 
 First, we need to make Frida listen to our app, then use `-l` to hook the custom Javascript file, see the cmd below:
 
-> frida -U <com.someapp> -l <someScript.js>
+> frida -U <com.company.someapp> -l <some-script.js>
   
 To spawn the app then listen to it right away, which is very helpful for early instrument, use `-f`
 
-> frida -U -f <com.someapp> -l <someScript.js>
+> frida -U -f <com.company.someapp> -l <some-script.js>
   
 While spawning, Frida will pause the app for early instrument purpose, so we need `%resume` to resume it. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
 
-> frida -Uf <com.someapp> -l <someScript.js> --no-pause
+> frida -Uf <com.company.someapp> -l <some-script.js> --no-pause
 
 **Note:**
 The `-l <someScript.js>` is optional, Frida CLI is a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) interface so we just need to paste the whole script into cmd line to execute it, but that is not ideally for large amount of codes. 
@@ -131,28 +131,59 @@ Here're some features that we're gonna mainly focus on for modding Unity app:
   
 View the sample script in this repo and follow the tutorial video for better understanding how to implement these method to our sample app.
 
-### Patch the apk file
+### Finish and build modded apk
 
 To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. We can do that by using [Objection](https://github.com/sensepost/objection)
 
-Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget automatically with Objection.
+Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget automatically by Objection.
 
-We will need to prepare 3 file:
+#### Install Objection
+
+We can install Objection via python just like Frida:
+
+> pip3 install objection
+
+Objection can do a lot of interesting things like enumerate Module, hooking class, hooking method, etc. But we're not gonna talk about it here, read its [wiki](https://github.com/sensepost/objection/wiki) for more detail.
+
+#### Requirement
+
+We will need to prepare 3 files:
 
 * The original apk file
 * Configuration file for gadget
 * Final Javascript file contains our script
 
-The configuration file should look like this:
+The configuration file should be formated as JSON file and looked like this:
 
 ```json
 {
   "interaction": {
     "type": "script",
-    "path": "libfrida-gadget.script.so"
+    "path": "libfrida-gadget.script.so",
+    "on_load": "resume"
   }
 }
 ```
+
+#### Patch the apk
+
+Open cmd/terminal, run the following cmd:
+
+> objection patchapk -s <some-apk.apk> -c <config.json> -l <some-script.js>
+
+Where:
+
+* `patchapk` uses for patching apk, for iOS use `patchipa`
+
+* `-s` is source apk or ipa file
+
+* `-c` input the configuration file
+
+* `-l` input the final script file
+
+* `--architecture` is optional if we don't have our device connected to ADB. Input the desired ABI, e.g. `arm64-v8a` | `armeabi-v7a` | `X86`,...
+
+The patching process will take some time depends on the size of apk or ipa file. Once it finished, we will have the modded apk ready to be installed.
 
 ## Frida with non-rooted devices
 
