@@ -88,7 +88,7 @@ This `-U` option means USB or remote device, so that we should see the processes
 
 ## Mod our first Unity app
 
-This tutorial comes with a sample Unity app that designed for learning Frida, so let's begin by downloading the [apk file](https://github.com/kylesmile1103/Learn-Frida/raw/master/gameLearn.apk).
+This tutorial comes with a sample Unity app that designed for learning Frida, so let's begin by downloading the [apk file](https://github.com/kylesmile1103/Learn-Frida/raw/master/LearnFrida.apk).
 
 ### Hook the script to desired app
 
