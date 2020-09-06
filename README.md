@@ -1,6 +1,6 @@
 # Learn how to use Frida with Unity app
 
-This tutorial will help you understand quickly and easily how to mod Unity app and games with Frida.
+This tutorial will help you understand quickly and easily how to mod Unity apps and games with Frida.
 
 ## Introduction
 
