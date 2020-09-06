@@ -21,6 +21,13 @@
             console.log("val3=",arr.add('0x28').readInt())
 
 ```
+
+- Read List<>:
+
+```
+           var list = this.instance.add(offset).readPointer().add(0x10).readPointer();
+           
+```
 - Write string:
 
 ```
