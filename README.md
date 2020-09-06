@@ -98,17 +98,17 @@ First, let's create a Javascript file and write down this simple code:
 console.log("Hello World!")
 ```
 
-After that, we need to make Frida listen to our app by inputting its packageID, then use `-l` to hook the custom Javascript file, see the cmd below:
+After that, we need to make Frida listen to our app by inputting its packageID, then use `-l` to hook the custom Javascript file, see this cmd:
 
 > frida -U <com.company.someapp> -l <some-script.js>
 
-If the cmd above execute successfully, we will see console output `Hello World!` string.
+If the cmd above executes successfully, we will see console output `Hello World!` string.
   
-To spawn the app then listen to it right away, which is very helpful for early instrument, use `-f`
+To spawn the app then listen to it right away, which is very helpful for early instrumentation, use `-f`
 
 > frida -U -f <com.company.someapp> -l <some-script.js>
   
-While spawning, Frida will pause the app for early instrument purpose, so we need `%resume` to resume it. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
+While spawning, Frida will pause the app for early instrumentation purpose, so we need `%resume` to resume it. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
 
 > frida -Uf <com.company.someapp> -l <some-script.js> --no-pause
 
