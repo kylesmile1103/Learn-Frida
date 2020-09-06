@@ -74,7 +74,7 @@ Let's install and start the server by following this [Frida document](https://fr
 
 The process of installing and updating Frida server could be done automatically by a Magisk module or an Android app published on Google Play.
 
-* With Magisk module, just open [Magisk](https://github.com/topjohnwu/Magisk/releases) app, go to Download tab, find and install the [MagiskFrida](https://github.com/AeonLucid/MagiskFrida) module then restart the device. This method is highly recommended since `MagiskFrida` is continuously developing, the server itself is automatically started every time the device boots and also get updated whenever there's a new version released. 
+* With Magisk module, just open [Magisk](https://github.com/topjohnwu/Magisk/releases) app, go to Download tab, find and install the [MagiskFrida](https://github.com/ViRb3/magisk-frida) module then restart the device. This method is highly recommended since `MagiskFrida` is continuously developing, the server itself is automatically started every time the device boots and also get updated whenever there's a new version released. 
 
 * With [Frida server](https://play.google.com/store/apps/details?id=me.shingle.fridaserver) app by `shingle`, find it on Google Play with packageID `me.shingle.fridaserver`. After `su` granted, we can now download and start the Frida-server easily.
 
@@ -287,6 +287,6 @@ That it, good luck and have fun!
 
 * Dynamic Instrumentation Toolkit – Frida: https://www.cyberpunk.rs/dynamic-instrumentation-toolkit-frida
 
-* MagiskFrida: https://github.com/AeonLucid/MagiskFrida
+* MagiskFrida: https://github.com/ViRb3/magisk-frida
 
 * Frida server: https://play.google.com/store/apps/details?id=me.shingle.fridaserver
