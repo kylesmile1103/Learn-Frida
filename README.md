@@ -113,7 +113,32 @@ While spawning, Frida will pause the app for early instrumentation purpose, so w
 > frida -Uf <com.company.someapp> -l <some-script.js> --no-pause
 
 **Note:**
-The `-l <some-script.js>` is optional, Frida CLI is a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) interface so we just need to paste the whole script into cmd line to execute it, but that is not ideally for large amount of codes. 
+
+* Early instrumentation will need an async await function, because the module (libil2cpp.so) might not be able to load before the script executing. See the code below:
+
+```javascript
+function awaitForCondition(callback) {
+    var i = setInterval(function () {
+      var addr = Module.findBaseAddress('libil2cpp.so');
+        // console.log("Address found:", addr);
+        if (addr) {
+            clearInterval(i);
+            callback(+addr);
+        }
+    }, 0);
+}
+
+var il2cpp = null;
+
+Java.perform(function () {
+    awaitForCondition(function (base) {
+        il2cpp = base;
+  // do something
+    })
+})
+```
+
+* The `-l <some-script.js>` is optional, Frida CLI is a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) interface so we just need to paste the whole script into cmd line to execute it, but that is not ideally for large amount of codes. 
 
 ### Write the first script
 
