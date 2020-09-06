@@ -221,7 +221,7 @@ Where:
 
 * `-s` is source apk or ipa file
 
-* `-l` input the final script file
+* `-c` input the configuration file
 
 * `--architecture` is optional if we don't have our device connected to ADB. Input the desired ABI, e.g. `arm64-v8a` | `armeabi-v7a` | `X86`,...
 
