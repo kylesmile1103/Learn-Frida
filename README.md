@@ -50,7 +50,7 @@ First off, download the latest frida-server from the [releases](https://github.c
 
 We are doing it on Android, so we need to find and download `frida-server-xx.xx.xx-android-arm64.xz`. After uncompressing, we should rename the file to `frida-server` and push to `data/local/tmp`
 
-#### Install the server via ADB
+#### Install the server manually via ADB
 
 > adb push frida-server /data/local/tmp/
 
@@ -62,6 +62,14 @@ We are doing it on Android, so we need to find and download `frida-server-xx.xx.
 
 > /data/local/tmp/frida-server &
 
+#### Install the server via MagiskFrida module or Frida server app
+
+The process of installing and updating Frida server could be done automatically by a Magisk module or an Android app published on Google Play.
+
+* With Magisk module, just open [Magisk](https://github.com/topjohnwu/Magisk/releases), go to Download and install the `MagiskFrida` module then restart the device. This method is highly recommended since MagiskFrida is continuously developing, the server itself is automatically started every time the device boots and also get updated whenever there's a new version released. 
+
+* With [Frida server](https://play.google.com/store/apps/details?id=me.shingle.fridaserver) app by shingle, find it on Google Play with packageID `me.shingle.fridaserver`. After `su` granted, we can now download and start the Frida-server.
+
 #### Testing via cmd/terminal
 
 Open cmd/powershell or terminal and type:
@@ -72,4 +80,6 @@ This `-U` option means USB or remote device, so that we should see the processes
 
 ## Mod our first Unity app
 
-This tutorial comes with a sample Unity app that designed for learning Frida, so let's begin by download the [apk file](https://github.com/kylesmile1103/Learn-Frida/raw/master/gameLearn.apk).
+This tutorial comes with a sample Unity app that designed for learning Frida, so let's begin by downloading the [apk file](https://github.com/kylesmile1103/Learn-Frida/raw/master/gameLearn.apk).
+
+
