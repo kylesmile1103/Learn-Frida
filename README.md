@@ -235,4 +235,4 @@ The patching gadget-only process now will take fewer time than patching with scr
 
 > adb shell monkey -p <com.company.someapp> 1; frida -U gadget -l <some-script.js>
 
-That it, have fun and good luck!
+That it, good luck and have fun!
