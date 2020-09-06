@@ -113,7 +113,7 @@ While spawning, Frida will pause the app for early instrumentation purpose, so w
 > frida -Uf <com.company.someapp> -l <some-script.js> --no-pause
 
 **Note:**
-The `-l <someScript.js>` is optional, Frida CLI is a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) interface so we just need to paste the whole script into cmd line to execute it, but that is not ideally for large amount of codes. 
+The `-l <some-script.js>` is optional, Frida CLI is a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) interface so we just need to paste the whole script into cmd line to execute it, but that is not ideally for large amount of codes. 
 
 ### Write the first script
 
