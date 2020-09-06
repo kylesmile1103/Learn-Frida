@@ -134,7 +134,7 @@ var il2cpp = null;
 
 Java.perform(function () {
     awaitForCondition(function (base) {
-        il2cpp = base;
+        il2cpp = ptr(base);
   // do something
     })
 })
