@@ -92,9 +92,17 @@ This tutorial comes with a sample Unity app that designed for learning Frida, so
 
 ### Hook the script to desired app
 
-First, we need to make Frida listen to our app by inputting its packageID, then use `-l` to hook the custom Javascript file, see the cmd below:
+First, let's create a Javascript file and write down this simple code:
+
+```javascript
+console.log("Hello World!")
+```
+
+After that, we need to make Frida listen to our app by inputting its packageID, then use `-l` to hook the custom Javascript file, see the cmd below:
 
 > frida -U <com.company.someapp> -l <some-script.js>
+
+If the cmd above execute successfully, we will see console output `Hello World!` string.
   
 To spawn the app then listen to it right away, which is very helpful for early instrument, use `-f`
 
