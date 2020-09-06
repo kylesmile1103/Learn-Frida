@@ -90,15 +90,15 @@ This tutorial comes with a sample Unity app that designed for learning Frida, so
 
 First, we need to make Frida listen to our app, then use `-l` to hook the custom Javascript file, take a look at this following cmd:
 
-> frida -U <package ID> -l <someScript.js>
+> frida -U <com.someapp> -l <someScript.js>
   
 To spawn the app then listen to it right away, which is very helpful for early instrument, use `-f`
 
-> frida -U -f <package ID> -l <someScript.js>
+> frida -U -f <com.someapp> -l <someScript.js>
   
 While spawning, Frida will pause the app for early instrument purpose, so we need `%resume` to resume the app. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
 
-> frida -Uf <package ID> -l <someScript.js> --no-pause
+> frida -Uf <com.someapp> -l <someScript.js> --no-pause
   
 
 
