@@ -86,9 +86,23 @@ This tutorial comes with a sample Unity app that designed for learning Frida, so
 
 ### Write the first script
 
+Learning Frida script is not difficult since it supports Javascript API and others high-level programming language. Let's take a look at Javascript API [document](https://frida.re/docs/javascript-api/).
+
+Clone [this repo](https://github.com/oleavr/frida-agent-example) so we can get code completion, type checking, inline docs, refactoring tools, etc.
+
+Here're some features that we're gonna mainly focus on for modding Unity app:
+
+1. Module
+* findBaseAdrress(`lib name`)
+* load(`path`)
+2. Interceptor
+* attach(`address`, `callback`)
+* replace(`adress`, `callback`)
+3. NativePointer(`offset|decimal`)
+4. NativeFunction(`address`, `return type`, `[array of argument]`)
 ### Hook the script to desired app
 
-First, we need to make Frida listen to our app, then use `-l` to hook the custom Javascript file, take a look at this following cmd:
+First, we need to make Frida listen to our app, then use `-l` to hook the custom Javascript file, see the cmd below:
 
 > frida -U <com.someapp> -l <someScript.js>
   
@@ -96,10 +110,7 @@ To spawn the app then listen to it right away, which is very helpful for early i
 
 > frida -U -f <com.someapp> -l <someScript.js>
   
-While spawning, Frida will pause the app for early instrument purpose, so we need `%resume` to resume the app. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
+While spawning, Frida will pause the app for early instrument purpose, so we need `%resume` to resume it. Or we can do it automatically by adding `--no-pause` at the end of cmd, also use `-Uf` for brevity.
 
 > frida -Uf <com.someapp> -l <someScript.js> --no-pause
-  
-
-
-
+ 
