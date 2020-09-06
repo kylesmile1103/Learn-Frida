@@ -107,7 +107,7 @@ Learning Frida script is not difficult since it supports Javascript API and othe
 
 Clone [this repo](https://github.com/oleavr/frida-agent-example), `npm install` then create new `.js` file inside of project folder so we can get code completion, type checking, inline docs, refactoring tools, etc.
 
-Here're some mainly features that we're gonna focus on for modding Unity app:
+Here're some features that we're gonna mainly focus on for modding Unity app:
 
 1. **[Module](https://frida.re/docs/javascript-api/#module)**
   * findBaseAdrress(`lib name`)
@@ -130,6 +130,29 @@ Here're some mainly features that we're gonna focus on for modding Unity app:
   * enumerateRanges(`protection | specifier`)
   
 View the sample script in this repo and follow the tutorial video for better understanding how to implement these method to our sample app.
+
+### Patch the apk file
+
+To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. We can do that by using [Objection](https://github.com/sensepost/objection)
+
+Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget automatically with Objection.
+
+We will need to prepare 3 file:
+
+* The original apk file
+* Configuration file for gadget
+* Final Javascript file contains our script
+
+The configuration file should look like this:
+
+```json
+{
+  "interaction": {
+    "type": "script",
+    "path": "libfrida-gadget.script.so"
+  }
+}
+```
 
 ## Frida with non-rooted devices
 
