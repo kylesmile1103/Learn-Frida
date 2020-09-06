@@ -93,13 +93,17 @@ Clone [this repo](https://github.com/oleavr/frida-agent-example) so we can get c
 Here're some features that we're gonna mainly focus on for modding Unity app:
 
 1. Module
-* findBaseAdrress(`lib name`)
-* load(`path`)
+  * findBaseAdrress(`lib name`)
+  * load(`path`)
+  
 2. Interceptor
-* attach(`address`, `callback`)
-* replace(`adress`, `callback`)
+  * attach(`address`, `callback`)
+  * replace(`adress`, `callback`)
+  
 3. NativePointer(`offset|decimal`)
+
 4. NativeFunction(`address`, `return type`, `[array of argument]`)
+
 ### Hook the script to desired app
 
 First, we need to make Frida listen to our app, then use `-l` to hook the custom Javascript file, see the cmd below:
