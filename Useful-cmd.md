@@ -33,3 +33,17 @@
             ret_val.add('0x14').writeUtf16String('123123');
             return ret_val;
 ```
+- Make Toast
+
+```
+function makeToast(string) {
+  Java.perform(function () {
+    var context = Java.use('android.app.ActivityThread').currentApplication().getApplicationContext();
+
+    Java.scheduleOnMainThread(function () {
+      var toast = Java.use("android.widget.Toast");
+      toast.makeText(Java.use("android.app.ActivityThread").currentApplication().getApplicationContext(), Java.use("java.lang.String").$new(string), 1).show();
+    });
+  });
+}
+```
