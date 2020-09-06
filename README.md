@@ -23,3 +23,7 @@ First, you would need to install Frida-tools on Windows/Mac/Linux in order to us
 * Python, Python3
 * Pip, Pip3
 
+### Install with Pip
+
+>pip install frida-tools
+
