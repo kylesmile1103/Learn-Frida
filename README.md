@@ -135,7 +135,7 @@ View the sample script in this repo and follow the tutorial video for better und
 
 To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. We can do that by using [Objection](https://github.com/sensepost/objection)
 
-Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget automatically by Objection.
+Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget, the best part is the whole process can be done automatically by Objection.
 
 #### Install Objection
 
@@ -187,3 +187,52 @@ The patching process will take some time depends on the size of apk or ipa file.
 
 ## Frida with non-rooted devices
 
+If our Android device can not be rooted, we still can use Frida normally. All we need is embedding the Frida's gadget library into the apk, and of course, this process can be done automatically by Objection.
+
+#### Requirement
+
+This time, we will only need to prepare 2 files:
+
+* The original apk file
+* Configuration file for gadget
+
+The configuration file should be formated as JSON file and looked like this:
+
+```json
+{
+  "interaction": {
+    "type": "listen",
+    "address": "127.0.0.1",
+    "port": 27042,
+    "on_load": "resume"
+  }
+}
+```
+
+#### Patch the apk
+
+Open cmd/terminal, run the following cmd:
+
+> objection patchapk -s <some-apk.apk> -c <config.json>
+
+Where:
+
+* `patchapk` uses for patching apk, for iOS use `patchipa`
+
+* `-s` is source apk or ipa file
+
+* `-l` input the final script file
+
+* `--architecture` is optional if we don't have our device connected to ADB. Input the desired ABI, e.g. `arm64-v8a` | `armeabi-v7a` | `X86`,...
+
+The patching gadget-only process now will take fewer time than patching with script. Once it finished, we will have the patched apk ready to be used with Frida, but instead of input the packageID, we need to input `gadget` for Frida to understand, since it can't read the process list on non-rooted devices.
+
+> frida -U gadget -l <some-script.js>
+
+**Note:**
+
+* The drawback of this technique is we can't spawn apk with `-f`, but we can do it with adb
+
+> adb shell monkey -p <com.company.someapp> 1; frida -U gadget -l <some-script.js>
+
+That it, have fun and good luck!
