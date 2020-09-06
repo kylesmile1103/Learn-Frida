@@ -109,25 +109,27 @@ Clone [this repo](https://github.com/oleavr/frida-agent-example) and create new 
 
 Here're some mainly features that we're gonna focus on for modding Unity app:
 
-1. **Module**
+1. **[Module](https://frida.re/docs/javascript-api/#module)**
   * findBaseAdrress(`lib name`)
   * load(`path`)
   
-2. **Interceptor**
+2. **[Interceptor](https://frida.re/docs/javascript-api/#interceptor)**
   * attach(`address`, `callback`)
   * replace(`adress`, `callback`)
   
-3. **NativePointer**(`offset | decimal`)
+3. **[NativePointer](https://frida.re/docs/javascript-api/#nativepointer)**(`offset | decimal`)
   * readInt() | readFloat() | readutf16String() | readByteArray(`decimal`) | readPointer()
   * writeInt(`decimal`) | writeFloat(`decimal`) | writeUtf16String(`'some string'`) | writeByteArray(`hex`) | writePointer(`ptr`)
   
-4. **NativeFunction**(`address`, `return type`, `[array of argument]`)
+4. **[NativeFunction](https://frida.re/docs/javascript-api/#nativefunction)**(`address`, `return type`, `[array of argument]`)
 
-5. **Memory**
+5. **[Memory](https://frida.re/docs/javascript-api/#memory)**
   * scan(`base address`, `size`, `pattern`, `callback`)
  
-6. Process
+6. **[Process](https://frida.re/docs/javascript-api/#process)**
   * enumerateRanges(`protection | specifier`)
   
-View the sample script in this repo to understand how to implement these method to our sample app.
+View the sample script in this repo and follow the tutorial video for better understanding how to implement these method to our sample app.
+
+## Frida with non-rooted devices
 
