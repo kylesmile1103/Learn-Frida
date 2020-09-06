@@ -14,7 +14,7 @@ It lets you inject snippets of JavaScript into native apps on Windows, Mac, Linu
 
 In other words, it allows you to inject your own code and to programmatically and interactively inspect and change running processes. Frida doesn’t need access to source code and can be used on iOS and Android devices that aren’t jailbroken or rooted. It lets you do all of this through APIs available from Objective-C, which are also exposed to higher-level languages through bindings.
 
-## Install Frida-tools and Frida-server
+## Getting ready
 
 ### Frida-tools
 
@@ -69,3 +69,7 @@ Open cmd/powershell or terminal and type:
 > frida-ps -U
 
 This `-U` option means USB or remote device, so that we should see the processes of our Android device.
+
+## Mod our first Unity app
+
+This tutorial comes with a sample Unity app that designed for learning Frida, so let's begin by download the [apk file](a.com).
