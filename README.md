@@ -105,7 +105,7 @@ The `-l <someScript.js>` is optional, Frida CLI is a [REPL](https://en.wikipedia
 
 Learning Frida script is not difficult since it supports Javascript API and others high-level programming language. Let's take a look at Javascript API [document](https://frida.re/docs/javascript-api/).
 
-Clone [this repo](https://github.com/oleavr/frida-agent-example) and create new `.js` file inside of project folder so we can get code completion, type checking, inline docs, refactoring tools, etc.
+Clone [this repo](https://github.com/oleavr/frida-agent-example), `npm install` then create new `.js` file inside of project folder so we can get code completion, type checking, inline docs, refactoring tools, etc.
 
 Here're some mainly features that we're gonna focus on for modding Unity app:
 
