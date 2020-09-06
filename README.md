@@ -109,21 +109,21 @@ Clone [this repo](https://github.com/oleavr/frida-agent-example) and create new 
 
 Here're some mainly features that we're gonna focus on for modding Unity app:
 
-1. Module
+1. **Module**
   * findBaseAdrress(`lib name`)
   * load(`path`)
   
-2. Interceptor
+2. **Interceptor**
   * attach(`address`, `callback`)
   * replace(`adress`, `callback`)
   
-3. NativePointer(`offset | decimal`)
+3. **NativePointer**(`offset | decimal`)
   * readInt() | readFloat() | readutf16String() | readByteArray(`decimal`) | readPointer()
   * writeInt(`decimal`) | writeFloat(`decimal`) | writeUtf16String(`'some string'`) | writeByteArray(`hex`) | writePointer(`ptr`)
   
-4. NativeFunction(`address`, `return type`, `[array of argument]`)
+4. **NativeFunction**(`address`, `return type`, `[array of argument]`)
 
-5. Memory
+5. **Memory**
   * scan(`base address`, `size`, `pattern`, `callback`)
  
 6. Process
