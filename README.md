@@ -101,8 +101,8 @@ Here're some features that we're gonna mainly focus on for modding Unity app:
   * replace(`adress`, `callback`)
   
 3. NativePointer(`offset|decimal`)
-  * readInt()|readFloat()|readutf16String()|readByteArray(decimal)|readPointer()
-  * writeInt(decimal)|writeFloat(decimal)|writeUtf16String('some string')|writeByteArray(hex)|writePointer(ptr)
+  * readInt() | readFloat() | readutf16String() | readByteArray(decimal) | readPointer()
+  * writeInt(decimal) | writeFloat(decimal) | writeUtf16String('some string') | writeByteArray(hex) | writePointer(ptr)
   
 4. NativeFunction(`address`, `return type`, `[array of argument]`)
 
