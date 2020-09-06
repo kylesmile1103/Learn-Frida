@@ -35,9 +35,7 @@ Open cmd/powershell or terminal and type:
 
 > frida-ps
 
-This will list all the [running processes](https://frida.re/docs/frida-ps/) of our current OS:
-
-![frida in cmd](https://i.imgur.com/uO49dpN.png)
+This will list all the [running processes](https://frida.re/docs/frida-ps/) of our current OS.
 
 ### Install Frida-server
 
@@ -64,4 +62,10 @@ We are doing it on Android, so we need to find and download `frida-server-xx.xx.
 
 > /data/local/tmp/frida-server &
 
+#### Testing via cmd/terminal
 
+Open cmd/powershell or terminal and type:
+
+> frida-ps -U
+
+This `-U` option means USB or remote device, so that we should see the processes of our Android device.
