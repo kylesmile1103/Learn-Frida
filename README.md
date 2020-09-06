@@ -14,6 +14,12 @@ It lets you inject snippets of JavaScript into native apps on Windows, Mac, Linu
 
 In other words, it allows you to inject your own code and to programmatically and interactively inspect and change running processes. Frida doesn’t need access to source code and can be used on iOS and Android devices that aren’t jailbroken or rooted. It lets you do all of this through APIs available from Objective-C, which are also exposed to higher-level languages through bindings.
 
+### Why using Frida?
+
+As far as I know, Frida is a framework designed for >developers, reverse-engineers, and security researchers to monitor and debug running processes. It also enables programmers, software and security professionals to execute their own JS scripts into other processes.
+
+Use
+
 ## Getting ready
 
 ### Frida-tools
@@ -133,9 +139,9 @@ View the sample script in this repo and follow the tutorial video for better und
 
 ### Finish and build modded apk
 
-To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. We can do that by using [Objection](https://github.com/sensepost/objection)
+To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. Frida's gadget enables us to achieve such purpose, read this [article](https://lief.quarkslab.com/doc/latest/tutorials/09_frida_lief.html#id9) to do it manually, we can also implememnt it by using [Objection](https://github.com/sensepost/objection), and this is the method we're gonna use.
 
-Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget, the best part is the whole process can be done automatically by Objection.
+Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget, the best part is the whole process can be done automatically.
 
 #### Install Objection
 
