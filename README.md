@@ -1,6 +1,6 @@
 # Learn how to use Frida with Unity app
 
-This tutorial will help you understand quickly and easily how to mod Unity games with Frida
+This tutorial will help you understand quickly and easily how to mod Unity games with Frida.
 
 ## Introduction
 
@@ -16,23 +16,47 @@ In other words, it allows you to inject your own code and to programmatically an
 
 ## Install Frida-tools and Frida-server
 
-First, you would need to install Frida-tools on Windows/Mac/Linux in order to use the CLI.
+### Frida-tools
 
-### Requirement:
+First, we would need to install Frida-tools on Windows/Mac/Linux in order to use the CLI.
+
+#### Requirement
 
 * Python, Python3
 * Pip, Pip3
 
-### Install with Pip
+#### Install with Pip
 
 > pip install frida-tools
 
-### Testing via cmd/terminal
+#### Testing via cmd/terminal
 
 Open cmd/powershell or terminal and type:
 
 > frida-ps
 
-This will list all the running processes of your current OS.
+This will list all the [running processes](https://frida.re/docs/frida-ps/) of our current OS:
 
 ![frida in cmd](https://i.imgur.com/uO49dpN.png)
+
+### Install Frida-server
+
+To communicate with Frida-tools from client-side, let's install Frida-server on whichever device we want to analyze. In this case, it's a Android device.
+
+#### Requirement
+
+* Rooted device
+* ADB is enabled and authorized
+
+First off, download the latest frida-server from the [releases](https://github.com/frida/frida/releases) page and uncompress it.
+
+We are doing it on Android, so we need to find and download `frida-server-xx.xx.xx-android-arm64.xz`. After uncompressing, we should rename the file to `frida-server` and push to `data/local/tmp`
+
+#### Install the server via ADB
+
+> adb push frida-server /data/local/tmp/
+> adb shell
+> su
+> chmod 755 /data/local/tmp/frida-server
+> /data/local/tmp/frida-server &
+
