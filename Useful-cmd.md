@@ -1,7 +1,7 @@
 - Read field:
 
 ```
-           var val1 = this.instance.add('0x10')
+           var val1 = this.instance.add(offset)
            console.log("Val 1: " + val1.readInt());
 ```
 - Read string:  
@@ -13,21 +13,21 @@
 - Read array: 
 
 ```
-            var arr=this.instance.add('0x20').readPointer();
+            var arr=this.instance.add(offset).readPointer();
 
             console.log("length: ", arr.add('0x18').readInt())
-            console.log(arr.add('0x20').readInt())
-            console.log(arr.add('0x24').readInt())
-            console.log(arr.add('0x28').readInt())
+            console.log("val1=",arr.add('0x20').readInt())
+            console.log("val2=",arr.add('0x24').readInt())
+            console.log("val3=",arr.add('0x28').readInt())
 
 ```
 - Write string:
 
 ```
-            var strings = this.instance.add('0x30').readPointer().add('0x14');
+            var strings = this.instance.add(offset).readPointer().add('0x14');
             strings.writeUtf16String('hahaha')
 ```
-- Replace function return string:
+- Replace string in function return:
 
 ```
             ret_val.add('0x14').writeUtf16String('123123');
