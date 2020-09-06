@@ -48,7 +48,7 @@ To communicate with Frida-tools from client-side, let's install Frida-server on 
 
 First off, download the latest frida-server from the [releases](https://github.com/frida/frida/releases) page and uncompress it.
 
-We are doing it on Android, so we need to find and download `frida-server-xx.xx.xx-android-arm64.xz`. After uncompressing, we should rename the file to `frida-server` and push to `data/local/tmp`
+In this tutorial, we will be doing it on Android device that has arm64-v8a ABI, so we need to find and download `frida-server-xx.xx.xx-android-arm64.xz`. After uncompressing, we should rename the file to `frida-server` and push to `data/local/tmp`
 
 #### Install the server manually via ADB
 
