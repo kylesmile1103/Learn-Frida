@@ -27,13 +27,13 @@ First, we would need to install Frida-tools on Windows/Mac/Linux in order to use
 
 #### Install with Pip
 
-`pip install frida-tools`
+> pip install frida-tools
 
 #### Testing via cmd/terminal
 
 Open cmd/powershell or terminal and type:
 
-`frida-ps`
+> frida-ps
 
 This will list all the [running processes](https://frida.re/docs/frida-ps/) of our current OS:
 
@@ -54,11 +54,14 @@ We are doing it on Android, so we need to find and download `frida-server-xx.xx.
 
 #### Install the server via ADB
 
-`
-adb push frida-server /data/local/tmp/
-adb shell
-su
-chmod 755 /data/local/tmp/frida-server
-/data/local/tmp/frida-server &
-`
+> adb push frida-server /data/local/tmp/
+
+> adb shell
+
+> su
+
+> chmod 755 /data/local/tmp/frida-server
+
+> /data/local/tmp/frida-server &
+
 
