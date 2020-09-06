@@ -14,11 +14,11 @@ It lets you inject snippets of JavaScript into native apps on Windows, Mac, Linu
 
 In other words, it allows you to inject your own code and to programmatically and interactively inspect and change running processes. Frida doesn’t need access to source code and can be used on iOS and Android devices that aren’t jailbroken or rooted. It lets you do all of this through APIs available from Objective-C, which are also exposed to higher-level languages through bindings.
 
-### Why using Frida?
+### Why is Frida?
 
-As far as I know, Frida is a framework designed for >developers, reverse-engineers, and security researchers to monitor and debug running processes. It also enables programmers, software and security professionals to execute their own JS scripts into other processes.
+As far as I know, Frida is a framework designed for _developers, reverse-engineers, and security researchers to monitor and debug running processes. It also enables programmers, software and security professionals to execute their own JS scripts into other processes._
 
-Use
+Game/App Modding might not meet the purpose how Frida is made for, but due to its wonderful features, such as live debugging; powerfull instrumentation kit; simple syntax, simple setup that help beginers easier to implement and learn, etc. It can be a perfect method for modding if we understand the Frida's fundamental, so let's start!
 
 ## Getting ready
 
@@ -242,3 +242,13 @@ The patching gadget-only process now will take fewer time than patching with scr
 > adb shell monkey -p <com.company.someapp> 1; frida -U gadget -l <some-script.js>
 
 That it, good luck and have fun!
+
+**Reference:**
+
+* Frida: https://frida.re/
+
+* How to use frida on a non-rooted device: https://lief.quarkslab.com/doc/latest/tutorials/09_frida_lief.html#id9
+
+* Objection: https://github.com/sensepost/objection
+
+* Dynamic Instrumentation Toolkit – Frida: https://www.cyberpunk.rs/dynamic-instrumentation-toolkit-frida
