@@ -2,6 +2,8 @@
 
 This tutorial will help you understand quickly and easily how to mod Unity apps and games with Frida.
 
+Watch the tutorial video along with reading this document: [![Learn Frida on Youtube](https://img.youtube.com/vi/8ROroQNxnL0/0.jpg)](https://www.youtube.com/watch?v=8ROroQNxnL0)
+
 ## Introduction
 
 According to Frida document, Frida is [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) for native apps, or, put in more technical terms, it’s a dynamic code instrumentation toolkit. It lets you inject snippets of JavaScript or your own library into native apps on Windows, macOS, GNU/Linux, iOS, Android, and QNX. [Learn more](https://frida.re/docs/home/)
@@ -171,7 +173,7 @@ Here're some features that we're gonna mainly focus on for modding Unity app:
   * findRangeByAddress(`ptr`)
   * enumerateRanges(`protection | specifier`)
   
-View the sample script in this repo and follow the tutorial video for better understanding how to implement these method to our sample app.
+View the sample script in this repo and follow the [tutorial video](https://www.youtube.com/watch?v=8ROroQNxnL0) for better understanding how to implement these method to our sample app.
 
 ### Finish and build modded apk
 
