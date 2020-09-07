@@ -1,0 +1,7 @@
+{
+    "interaction": {
+      "type": "script",
+      "path": "libfrida-gadget.script.so",
+      "on_load": "resume"
+    }
+  }
