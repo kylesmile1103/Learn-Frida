@@ -267,19 +267,19 @@ Where:
 
 * `--architecture` is optional if we don't have our device connected to ADB. Input the desired ABI, e.g. `arm64-v8a` | `armeabi-v7a` | `X86`,...
 
-The patching gadget-only process now will take fewer time than patching with script. Once it finished, we will have the patched apk ready to be used with Frida, but instead of input the packageID, we need to input `gadget` for Frida to understand, since it can't read the process list on non-rooted devices.
+The gadget-only patching process will take substantially less time than patching with script. Once it finished, we will have the patched apk ready to be used with Frida. However, instead of inputting the packageID, we need to input `gadget` for Frida to understand, since it can't read the process list on non-rooted devices.
 
 > frida -U gadget -l <some-script.js>
 
 **Note:**
 
-* The drawback of this technique is we can't spawn apk with `-f`, but we can do it with adb
+* The drawback of this technique is we can't spawn apk with `-f`, but we can do it with ADB:
 
 > adb shell monkey -p <com.company.someapp> 1; frida -U gadget -l <some-script.js>
 
 That it, good luck and have fun!
 
-**Reference:**
+**References:**
 
 * Frida: https://frida.re/
 
