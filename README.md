@@ -2,7 +2,8 @@
 
 This tutorial will help you understand quickly and easily how to mod Unity apps and games with Frida.
 
-Watch the tutorial video along with reading this document: [![Learn Frida on Youtube](https://img.youtube.com/vi/8ROroQNxnL0/0.jpg)](https://www.youtube.com/watch?v=8ROroQNxnL0)
+Watch the tutorial video along with reading this document: 
+[![Learn Frida on Youtube](https://img.youtube.com/vi/KeWcZ-Dd6tA/0.jpg)](https://www.youtube.com/watch?v=KeWcZ-Dd6tA)
 
 ## Introduction
 
@@ -150,7 +151,7 @@ Learning Frida script is not difficult since it supports Javascript API and othe
 
 Clone [this repo](https://github.com/oleavr/frida-agent-example), `npm install` then create new `.js` file inside of project folder so we can get code completion, type checking, inline docs, refactoring tools, etc.
 
-Here're some features that we're gonna mainly focus on for modding Unity app:
+Here're some features that we're going to mainly focus on for modding Unity app:
 
 1. **[Module](https://frida.re/docs/javascript-api/#module)**
   * findBaseAdrress(`lib name`)
@@ -173,11 +174,11 @@ Here're some features that we're gonna mainly focus on for modding Unity app:
   * findRangeByAddress(`ptr`)
   * enumerateRanges(`protection | specifier`)
   
-View the sample script in this repo and follow the [tutorial video](https://www.youtube.com/watch?v=8ROroQNxnL0) for better understanding how to implement these method to our sample app.
+View the sample script in this repo and follow the [tutorial video](https://www.youtube.com/watch?v=KeWcZ-Dd6tA) for better understanding how to implement these method to our sample app.
 
 ### Finish and build modded apk
 
-To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. Frida's gadget enables us to achieve such purpose, read this [article](https://lief.quarkslab.com/doc/latest/tutorials/09_frida_lief.html#id9) to do it manually, we can also implememnt it by using [Objection](https://github.com/sensepost/objection), and this is the method we're gonna use.
+To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. Frida's gadget enables us to achieve such purpose, read this [article](https://lief.quarkslab.com/doc/latest/tutorials/09_frida_lief.html#id9) to do it manually, we can also implememnt it by using [Objection](https://github.com/sensepost/objection), and this is the method we're going to use.
 
 Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget, the best part is the whole process can be done automatically.
 
@@ -187,7 +188,7 @@ We can install Objection via python just like Frida:
 
 > pip3 install objection
 
-Objection can do a lot of interesting things like enumerate Module, hooking class, hooking method, etc. But we're not gonna talk about it here, read its [wiki](https://github.com/sensepost/objection/wiki) for more detail.
+Objection can do a lot of interesting things like enumerate Module, hooking class, hooking method, etc. But we're not going to talk about it here, read its [wiki](https://github.com/sensepost/objection/wiki) for more detail.
 
 #### Requirement
 
