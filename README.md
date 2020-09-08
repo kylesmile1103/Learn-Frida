@@ -2,7 +2,8 @@
 
 This tutorial will help you understand quickly and easily how to mod Unity apps and games with Frida.
 
-Watch the tutorial video along with reading this document: 
+Watch the tutorial video along with reading this document:
+
 [![Learn Frida on Youtube](https://img.youtube.com/vi/KeWcZ-Dd6tA/0.jpg)](https://www.youtube.com/watch?v=KeWcZ-Dd6tA)
 
 ## Introduction
