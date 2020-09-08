@@ -11,7 +11,7 @@ const GetIntA = '0x00668834';
 const GetBoolB = '0x006688E8';
 const GetStringStr = '0x0066898C';
 const GetFloatC = '0x00668A1C';
-const etArrayInt = '0x00668AD8';
+const GetArrayInt = '0x00668AD8';
 const ChangeValueStaticIntA = '0x00668BA0';
 const changeValueStringStatic = '0x00668C34';
 const GetListInt = '0x00668D00';
@@ -39,7 +39,7 @@ Java.perform(function () {
         readFieldBool() // always true
         readFieldString('so very awesome')
         readFieldFloat(145.214)
-        readFieldArray(98, 76, 43)
+        readFieldArray(11, 11, 11)
         readFieldList(12, 361, 352)
         readFieldListStr('ha', 'hi', 'hu')
         readFieldStaticInt(99)
@@ -49,7 +49,7 @@ Java.perform(function () {
 
 
 function readFieldInt(int) {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(ChangeA), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0]
@@ -66,7 +66,7 @@ function readFieldInt(int) {
 
 
 function readFieldBool() {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(changeB), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0]
@@ -81,7 +81,7 @@ function readFieldBool() {
 }
 
 function readFieldString(strNew) {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(ChangeStr), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0]
@@ -96,7 +96,7 @@ function readFieldString(strNew) {
 }
 
 function readFieldFloat(float) {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(ChangeC), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0]
@@ -111,7 +111,7 @@ function readFieldFloat(float) {
 }
 
 function readFieldArray(int1, int2, int3) {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(ChangeAr), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0]
@@ -134,7 +134,7 @@ function readFieldArray(int1, int2, int3) {
 }
 
 function readFieldList(int1, int2, int3) {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(changeListInt), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0]
@@ -156,7 +156,7 @@ function readFieldList(int1, int2, int3) {
 }
 
 function readFieldListStr(str1, str2, str3) {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(ChaneListStr), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0]
@@ -178,7 +178,7 @@ function readFieldListStr(str1, str2, str3) {
 }
 
 function readFieldStaticInt(int) {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(ChangeValueStaticIntA), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0] // is it useless?
@@ -207,7 +207,7 @@ function readFieldStaticInt(int) {
 }
 
 function readFieldStaticStr(str) {
-    Interceptor.attach(il2cpp.add(ShowResult), {
+    Interceptor.attach(il2cpp.add(changeValueStringStatic), {
         onEnter: function (args) {
             // console.log("ShowResult is calling");
             this.instance = args[0] // is it useless?
