@@ -189,7 +189,7 @@ We can install Objection via python just like Frida:
 
 > pip3 install objection
 
-Objection can do a lot of interesting things like enumerate Module, hooking class, hooking method, etc. But we're not going to talk about it here, read its [wiki](https://github.com/sensepost/objection/wiki) for more detail.
+Objection can do a lot of interesting things like enumerating Module, hooking class, hooking method, etc. But we're not going to talk about it here, read its [wiki](https://github.com/sensepost/objection/wiki) for more detail.
 
 #### Requirement
 
@@ -231,7 +231,7 @@ Where:
 
 The patching process will take some time depends on the size of apk or ipa file. Once it finished, we will have the modded apk ready to be installed.
 
-## Frida with non-rooted devices
+## Frida on non-rooted devices
 
 If our Android device can not be rooted, we still can use Frida normally. All we need is embedding the Frida's gadget library into the apk, and of course, this process can be done automatically by Objection.
 
@@ -282,6 +282,20 @@ The gadget-only patching process will take substantially less time than patching
 > adb shell monkey -p <com.company.someapp> 1; frida -U gadget -l <some-script.js>
 
 That it, good luck and have fun!
+
+**Useful links:**
+
+* [Frida-snippets](https://github.com/iddoeldor/frida-snippets)
+
+* [frida-il2cpp](https://github.com/AeonLucid/frida-il2cpp)
+
+* [DragonFist](https://github.com/dragonjumeog/DragonFist)
+
+* [Android Cheat Engine - LinEngine](http://linforum.kr/bbs/content.php?co_id=linEngine_en)
+
+* [RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security)
+
+* [Android Hacking Tips and Tricks with Frida & BurpSuite](https://guidedhacking.com/threads/android-hacking-tips-and-tricks-with-frida-burpsuite.14489/)
 
 **References:**
 
