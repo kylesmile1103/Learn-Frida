@@ -56,7 +56,7 @@ To communicate with Frida-tools from client-side, let's install Frida-server on 
 * Rooted device
 * ADB is enabled and authorized
 
-First off, download the latest frida-server from the [releases](https://github.com/frida/frida/releases) page and uncompress it.
+First off, download the latest frida-server from the [releases](https://github.com/frida/frida/releases) page and uncompress it. (PS: Remember to uncompress the file before push it to your phone! )
 
 In this tutorial, we will be doing it on Android device that has arm64-v8a ABI, so we need to find and download `frida-server-xx.xx.xx-android-arm64.xz`. After uncompressing, we should rename the file to `frida-server` and push to `data/local/tmp`
 
@@ -179,7 +179,7 @@ View the sample script in this repo and follow the [tutorial video](https://www.
 
 ### Finish and build modded apk
 
-To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. Frida's gadget enables us to achieve such purpose, read this [article](https://lief.quarkslab.com/doc/latest/tutorials/09_frida_lief.html#id9) to do it manually, we can also implememnt it by using [Objection](https://github.com/sensepost/objection), and this is the method we're going to use.
+To complete our modding process, we need to patch the script to apk file so that it can run independently without a computer. Frida's gadget enables us to achieve such purpose, read this [article](https://lief.quarkslab.com/doc/latest/tutorials/09_frida_lief.html) to do it manually, we can also implememnt it by using [Objection](https://github.com/sensepost/objection), and this is the method we're going to use.
 
 Looking into Objection wiki, find the [Gadget-Configuration](https://github.com/sensepost/objection/wiki/Gadget-Configurations) segment, there will be detail guides on how to patch apk or ipa file with Frida gadget, the best part is the whole process can be done automatically.
 
@@ -301,7 +301,7 @@ That it, good luck and have fun!
 
 * Frida: https://frida.re/
 
-* How to use frida on a non-rooted device: https://lief.quarkslab.com/doc/latest/tutorials/09_frida_lief.html#id9
+* How to use frida on a non-rooted device: https://lief.quarkslab.com/doc/latest/tutorials/09_frida_lief.html
 
 * Objection: https://github.com/sensepost/objection
 
