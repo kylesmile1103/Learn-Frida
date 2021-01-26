@@ -120,7 +120,7 @@ While spawning, Frida will pause the app for early instrumentation purpose, so w
 
 * Apk that built from latest version of Unity Engine (including the sample app in this tutorial) will crash the server if we don't use `-f`, so make sure to add that option in cmd line.
 
-* Early instrumentation will need an async await wrapper, because the module (libil2cpp.so) might not be able to load before the script's executing. See the code below:
+* Early instrumentation will need a callback wrapper, because the module (libil2cpp.so) may not be able to load before the script's executing. See the example code below:
 
 ```javascript
 function awaitForCondition(callback) {
@@ -271,7 +271,7 @@ Where:
 
 * `--architecture` is optional if we don't have our device connected to ADB. Input the desired ABI, e.g. `arm64-v8a` | `armeabi-v7a` | `X86`,...
 
-The gadget-only patching process will take substantially less time than patching with script. Once it finished, we will have the patched apk ready to be used with Frida. However, instead of inputting the packageID, we need to input `gadget` for Frida to understand, since it can't read the process list on non-rooted devices.
+With this, the process will take substantially less time than patching with script since it only embeds the Frida gadget library and some IL codes to load it. Once it finished, we will have the patched apk ready to be used with Frida. However, instead of inputting the packageID, we need to input `gadget` for Frida to understand, since it can't read the process list on non-rooted devices.
 
 > frida -U gadget -l <some-script.js>
 
